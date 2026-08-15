@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -73,233 +72,307 @@ section{position:relative;}
 
 /* ---------- NAV ---------- */
 nav{
-position; top:0; left:0; right:0; z-index:100;
-display; align-items; justify-content;
-padding:18px 32px; backdrop-filter(10px);
-background(180deg, rgba(11,30,51,0.75), rgba(11,30,51,0));
-transition .3s ease, padding .3s ease;
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 32px; backdrop-filter:blur(10px);
+  background:linear-gradient(180deg, rgba(11,30,51,0.75), rgba(11,30,51,0));
+  transition:background .3s ease, padding .3s ease;
 }
-nav.scrolled{background(11,30,51,0.92); padding:12px 32px; box-shadow:0 8px 24px rgba(0,0,0,0.25);}
-.logo{display; align-items; gap:10px; font-family:'Space Grotesk'; font-weight:700; font-size:19px; color:#fff;}
+nav.scrolled{background:rgba(11,30,51,0.92); padding:12px 32px; box-shadow:0 8px 24px rgba(0,0,0,0.25);}
+.logo{display:flex; align-items:center; gap:10px; font-family:'Space Grotesk'; font-weight:700; font-size:19px; color:#fff;}
 .logo-mark{
-width:32px; height:32px; border-radius:9px;
-background(135deg, var(--sun), var(--eco));
-display; align-items; justify-content; font-size:16px;
+  width:32px; height:32px; border-radius:9px;
+  background:linear-gradient(135deg, var(--sun), var(--eco));
+  display:flex; align-items:center; justify-content:center; font-size:16px;
 }
-.nav-links{display; align-items; gap:28px;}
+.nav-links{display:flex; align-items:center; gap:28px;}
 .nav-links a{
-font-size:13.5px; font-weight:600; color(255,255,255,0.82);
-font-family:'JetBrains Mono', monospace; letter-spacing:0.02em;
-display; align-items; gap:6px;
+  font-size:13.5px; font-weight:600; color:rgba(255,255,255,0.82);
+  font-family:'JetBrains Mono', monospace; letter-spacing:0.02em;
+  display:flex; align-items:center; gap:6px;
 }
-.nav-links a span{color(--sun-light); font-weight:700;}
-.nav-links a
-.nav-cta{display; align-items; gap:16px;}
-.nav-toggle{display; background; border; color:#fff; font-size:22px; cursor;}
+.nav-links a span{color:var(--sun-light); font-weight:700;}
+.nav-links a:hover{color:#fff;}
+.nav-cta{display:flex; align-items:center; gap:16px;}
+.nav-toggle{display:none; background:none; border:none; color:#fff; font-size:22px; cursor:pointer;}
 @media (max-width:880px){
-.nav-links{display;}
-.nav-toggle{display;}
+  .nav-links{display:none;}
+  .nav-toggle{display:block;}
 }
 
 /* ---------- HERO ---------- */
 .hero{
-min-height:100vh; display; align-items;
-background-image:
-linear-gradient(180deg, rgba(9,20,35,0.35) 0%, rgba(9,20,35,0.55) 45%, rgba(8,17,29,0.94) 100%),
-url('https://images.unsplash.com/photo-1770567764570-ebe9b5d0c02b?q=80&w=2200&auto=format&fit=crop');
-background-size; background-position;
-color:#fff; padding-top:120px;
+  min-height:100vh; display:flex; align-items:flex-end;
+  background-image:
+    linear-gradient(180deg, rgba(9,20,35,0.35) 0%, rgba(9,20,35,0.55) 45%, rgba(8,17,29,0.94) 100%),
+    url('https://images.unsplash.com/photo-1770567764570-ebe9b5d0c02b?q=80&w=2200&auto=format&fit=crop');
+  background-size:cover; background-position:center;
+  color:#fff; padding-top:120px;
 }
 .hero-inner{padding-bottom:90px; width:100%;}
-.hero-tag{color(--sun-light); margin-bottom:22px;}
+.hero-tag{color:var(--sun-light); margin-bottom:22px;}
 .hero h1{
-font-size(40px, 6vw, 76px); max-width:920px; margin-bottom:22px;
-color:#fff;
+  font-size:clamp(40px, 6vw, 76px); max-width:920px; margin-bottom:22px;
+  color:#fff;
 }
-.hero h1 em{font-style; color(--sun-light);}
-.hero .lead{font-size(17px,2vw,21px); max-width:560px; color(255,255,255,0.88); margin-bottom:34px; font-weight:500;}
-.hero-actions{display; align-items; gap:16px; flex-wrap; margin-bottom:34px;}
-.hero-foot{display; align-items; gap:18px; flex-wrap;}
+.hero h1 em{font-style:normal; color:var(--sun-light);}
+.hero .lead{font-size:clamp(17px,2vw,21px); max-width:560px; color:rgba(255,255,255,0.88); margin-bottom:34px; font-weight:500;}
+.hero-actions{display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:34px;}
+.hero-foot{display:flex; align-items:center; gap:18px; flex-wrap:wrap;}
 
 /* economy meter — signature element */
 .meter{
-display; align-items; gap:16px;
-background(8,17,29,0.55); border:1px solid var(--line-light);
-border-radius:100px; padding:10px 22px 10px 10px; width;
+  display:flex; align-items:center; gap:16px;
+  background:rgba(8,17,29,0.55); border:1px solid var(--line-light);
+  border-radius:100px; padding:10px 22px 10px 10px; width:fit-content;
 }
 .meter-track{
-position; width:190px; height:10px; border-radius:100px;
-background(255,255,255,0.14); overflow;
+  position:relative; width:190px; height:10px; border-radius:100px;
+  background:rgba(255,255,255,0.14); overflow:hidden;
 }
 .meter-fill{
-position; inset:0; width:0%; border-radius:100px;
-background(90deg, var(--sun), var(--eco-light) 85%);
-animation 1.6s .3s cubic-bezier(.2,.8,.2,1) forwards;
+  position:absolute; inset:0; width:0%; border-radius:100px;
+  background:linear-gradient(90deg, var(--sun), var(--eco-light) 85%);
+  animation:fillMeter 1.6s .3s cubic-bezier(.2,.8,.2,1) forwards;
 }
 @keyframes fillMeter{ to { width:90%; } }
-.meter-label{font-family:'JetBrains Mono'; font-size:13px; color(255,255,255,0.85);}
-.meter-label b{color(--sun-light); font-size:16px;}
+.meter-label{font-family:'JetBrains Mono'; font-size:13px; color:rgba(255,255,255,0.85);}
+.meter-label b{color:var(--sun-light); font-size:16px;}
 
 /* ---------- SECTION 02 ---------- */
-.section-light{background(--paper); padding:120px 0;}
-.section-light .eyebrow{color(--eco);}
-.section-light .eyebrow .num{background(--eco); color:#fff;}
-.grid-2{display; grid-template-columns:1.05fr 0.95fr; gap:64px; align-items;}
-h2{font-size(30px,4vw,44px); margin:18px 0 22px; color(--night);}
-.section-light p.body-text{font-size:16.5px; color(--ink-soft); max-width:520px; margin-bottom:16px;}
-.stat-row{display; gap:28px; margin-top:32px; flex-wrap;}
+.section-light{background:var(--paper); padding:120px 0;}
+.section-light .eyebrow{color:var(--eco);}
+.section-light .eyebrow .num{background:var(--eco); color:#fff;}
+.grid-2{display:grid; grid-template-columns:1.05fr 0.95fr; gap:64px; align-items:center;}
+h2{font-size:clamp(30px,4vw,44px); margin:18px 0 22px; color:var(--night);}
+.section-light p.body-text{font-size:16.5px; color:var(--ink-soft); max-width:520px; margin-bottom:16px;}
+.stat-row{display:flex; gap:28px; margin-top:32px; flex-wrap:wrap;}
 .stat{border-left:3px solid var(--sun); padding-left:16px;}
-.stat .n{font-family:'JetBrains Mono'; font-size:26px; font-weight:700; color(--night);}
-.stat .l{font-size:13px; color(--ink-soft); font-weight:600;}
+.stat .n{font-family:'JetBrains Mono'; font-size:26px; font-weight:700; color:var(--night);}
+.stat .l{font-size:13px; color:var(--ink-soft); font-weight:600;}
 .chart-card{
-background:#fff; border-radius(--radius); box-shadow(--shadow);
-padding:32px; border:1px solid var(--line);
+  background:#fff; border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:32px; border:1px solid var(--line);
 }
-.chart-card h4{font-size:15px; color(--ink-soft); font-weight:700; margin-bottom:4px;}
-.chart-card .big{font-family:'JetBrains Mono'; font-size:15px; color(--eco); font-weight:700; margin-bottom:18px;}
-.chart-disclaimer{font-size:12px; color(--ink-soft); margin-top:14px; line-height:1.5;}
+.chart-card h4{font-size:15px; color:var(--ink-soft); font-weight:700; margin-bottom:4px;}
+.chart-card .big{font-family:'JetBrains Mono'; font-size:15px; color:var(--eco); font-weight:700; margin-bottom:18px;}
+.chart-disclaimer{font-size:12px; color:var(--ink-soft); margin-top:14px; line-height:1.5;}
 
 /* ---------- SECTION 03 (simulate) ---------- */
-.section-navy{background(--night-3); padding:120px 0; color:#fff;}
-.section-navy .eyebrow{color(--sun-light);}
-.section-navy .eyebrow .num{background(--sun); color(--night);}
+.section-navy{background:var(--night-3); padding:120px 0; color:#fff;}
+.section-navy .eyebrow{color:var(--sun-light);}
+.section-navy .eyebrow .num{background:var(--sun); color:var(--night);}
 .section-navy h2{color:#fff;}
-.section-navy p.body-text{color(255,255,255,0.72); max-width:560px;}
+.section-navy p.body-text{color:rgba(255,255,255,0.72); max-width:560px;}
 
-.sim-grid{display; grid-template-columns:0.95fr 1.05fr; gap:56px; margin-top:56px; align-items;}
+.sim-grid{display:grid; grid-template-columns:0.95fr 1.05fr; gap:56px; margin-top:56px; align-items:flex-start;}
 .sim-card{
-background(160deg, #12314F, #0E243C);
-border:1px solid var(--line-light); border-radius(--radius);
-padding:36px; box-shadow(--shadow);
+  background:linear-gradient(160deg, #12314F, #0E243C);
+  border:1px solid var(--line-light); border-radius:var(--radius);
+  padding:36px; box-shadow:var(--shadow);
 }
 .field{margin-bottom:18px;}
-.field label{display; font-size:12.5px; font-family:'JetBrains Mono'; letter-spacing:0.04em; color(--sun-light); margin-bottom:8px; text-transform;}
+.field label{display:block; font-size:12.5px; font-family:'JetBrains Mono'; letter-spacing:0.04em; color:var(--sun-light); margin-bottom:8px; text-transform:uppercase;}
 .field input{
-width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--line-light);
-background(255,255,255,0.06); color:#fff; font-size:15px; font-family:'Plus Jakarta Sans';
+  width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--line-light);
+  background:rgba(255,255,255,0.06); color:#fff; font-size:15px; font-family:'Plus Jakarta Sans';
 }
-.field input::placeholder{color(255,255,255,0.35);}
-.field input{outline:2px solid var(--sun); outline-offset:1px;}
+.field input::placeholder{color:rgba(255,255,255,0.35);}
+.field input:focus{outline:2px solid var(--sun); outline-offset:1px;}
 .field select{
-width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--line-light);
-background(255,255,255,0.06); color:#fff; font-size:15px; font-family:'Plus Jakarta Sans';
+  width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--line-light);
+  background:rgba(255,255,255,0.06); color:#fff; font-size:15px; font-family:'Plus Jakarta Sans';
 }
-.field select{outline:2px solid var(--sun); outline-offset:1px;}
+.field select:focus{outline:2px solid var(--sun); outline-offset:1px;}
 .field select option{color:#0E1B2B;}
-.field-row{display; grid-template-columns:1fr 1fr; gap:14px;}
+.field-row{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
 .sim-result{
-margin-top:22px; padding:20px; border-radius:14px;
-background(31,170,109,0.12); border:1px solid rgba(111,227,166,0.35);
-display;
+  margin-top:22px; padding:20px; border-radius:14px;
+  background:rgba(31,170,109,0.12); border:1px solid rgba(111,227,166,0.35);
+  display:none;
 }
-.sim-result.show{display; animation .5s ease;}
-@keyframes riseIn{from{opacity:0; transform(8px);} to{opacity:1; transform(0);}}
-.sim-result .row{display; justify-content; align-items; padding:7px 0; border-bottom:1px dashed rgba(255,255,255,0.12); font-size:14px;}
-.sim-result .row{border-bottom;}
+.sim-result.show{display:block; animation:riseIn .5s ease;}
+@keyframes riseIn{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);}}
+.sim-result .row{display:flex; justify-content:space-between; align-items:baseline; padding:7px 0; border-bottom:1px dashed rgba(255,255,255,0.12); font-size:14px;}
+.sim-result .row:last-child{border-bottom:none;}
 .sim-result .row .v{font-family:'JetBrains Mono'; font-weight:700; font-size:16px;}
-.sim-result .v.green{color(--eco-light);}
-.sim-note{font-size:12px; color(255,255,255,0.5); margin-top:12px; line-height:1.5;}
+.sim-result .v.green{color:var(--eco-light);}
+.sim-note{font-size:12px; color:rgba(255,255,255,0.5); margin-top:12px; line-height:1.5;}
 
 .sub-block{margin-top:100px;}
-.sub-head{display; justify-content; align-items; gap:20px; flex-wrap; margin-bottom:36px;}
+.sub-head{display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap; margin-bottom:36px;}
 .sub-head h3{font-size:26px; color:#fff;}
-.gallery{display; grid-template-columns(3,1fr); gap:22px;}
-.gallery-card{border-radius:16px; overflow; position; height:280px; border:1px solid var(--line-light);}
-.gallery-card img{width:100%; height:100%; object-fit; transition .5s ease;}
-.gallery-card img{transform(1.06);}
+.gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+.gallery-card{border-radius:16px; overflow:hidden; position:relative; height:280px; border:1px solid var(--line-light);}
+.gallery-card img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+.gallery-card:hover img{transform:scale(1.06);}
 .gallery-cap{
-position; left:0; right:0; bottom:0; padding:16px;
-background(180deg, transparent, rgba(0,0,0,0.75));
-font-size:13.5px; font-weight:600;
+  position:absolute; left:0; right:0; bottom:0; padding:16px;
+  background:linear-gradient(180deg, transparent, rgba(0,0,0,0.75));
+  font-size:13.5px; font-weight:600;
 }
-.gallery-cap .tag{display; font-family:'JetBrains Mono'; font-size:11px; color(--sun-light); margin-top:2px;}
+.gallery-cap .tag{display:block; font-family:'JetBrains Mono'; font-size:11px; color:var(--sun-light); margin-top:2px;}
 
-.testi-grid{display; grid-template-columns(3,1fr); gap:22px;}
+.testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
 .testi-card{
-background(255,255,255,0.05); border:1px solid var(--line-light); border-radius:16px; padding:26px;
+  background:rgba(255,255,255,0.05); border:1px solid var(--line-light); border-radius:16px; padding:26px;
 }
-.testi-stars{color(--sun-light); font-size:14px; margin-bottom:14px; letter-spacing:2px;}
-.testi-quote{font-size:14.5px; color(255,255,255,0.85); margin-bottom:20px; line-height:1.6;}
-.testi-person{display; align-items; gap:12px;}
+.testi-stars{color:var(--sun-light); font-size:14px; margin-bottom:14px; letter-spacing:2px;}
+.testi-quote{font-size:14.5px; color:rgba(255,255,255,0.85); margin-bottom:20px; line-height:1.6;}
+.testi-person{display:flex; align-items:center; gap:12px;}
 .avatar{
-width:38px; height:38px; border-radius:50%; display; align-items; justify-content;
-font-family:'Space Grotesk'; font-weight:700; font-size:14px; color(--night);
-background(135deg, var(--sun-light), var(--eco-light));
+  width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:'Space Grotesk'; font-weight:700; font-size:14px; color:var(--night);
+  background:linear-gradient(135deg, var(--sun-light), var(--eco-light));
 }
 .testi-person .name{font-size:13.5px; font-weight:700;}
-.testi-person .loc{font-size:11.5px; color(255,255,255,0.5); font-family:'JetBrains Mono';}
-.placeholder-note{font-size:11.5px; color(255,255,255,0.35); margin-top:18px;}
+.testi-person .loc{font-size:11.5px; color:rgba(255,255,255,0.5); font-family:'JetBrains Mono';}
+.placeholder-note{font-size:11.5px; color:rgba(255,255,255,0.35); margin-top:18px;}
 
 /* ---------- SECTION 04 (why us) ---------- */
 .section-why{
-background(--night); padding:120px 0; color:#fff;
+  background:var(--night); padding:120px 0; color:#fff;
 }
-.why-grid{display; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items;}
+.why-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:center;}
 .why-img{
-border-radius:22px; overflow; aspect-ratio:4/5; position;
-box-shadow(--shadow);
+  border-radius:22px; overflow:hidden; aspect-ratio:4/5; position:relative;
+  box-shadow:var(--shadow);
 }
-.why-img img{width:100%; height:100%; object-fit;}
+.why-img img{width:100%; height:100%; object-fit:cover;}
 .why-badge{
-position; bottom:22px; left:22px; right:22px;
-background(11,30,51,0.85); border:1px solid var(--line-light);
-border-radius:14px; padding:16px 18px; backdrop-filter(6px);
+  position:absolute; bottom:22px; left:22px; right:22px;
+  background:rgba(11,30,51,0.85); border:1px solid var(--line-light);
+  border-radius:14px; padding:16px 18px; backdrop-filter:blur(6px);
 }
-.why-badge .v{font-family:'JetBrains Mono'; font-size:24px; font-weight:700; color(--sun-light);}
-.why-badge .l{font-size:12px; color(255,255,255,0.7);}
-.section-why .eyebrow{color(--sun-light);}
-.section-why .eyebrow .num{background(--sun); color(--night);}
+.why-badge .v{font-family:'JetBrains Mono'; font-size:24px; font-weight:700; color:var(--sun-light);}
+.why-badge .l{font-size:12px; color:rgba(255,255,255,0.7);}
+.section-why .eyebrow{color:var(--sun-light);}
+.section-why .eyebrow .num{background:var(--sun); color:var(--night);}
 .section-why h2{color:#fff;}
-.section-why p.body-text{color(255,255,255,0.72); max-width:540px;}
-.feature-list{margin-top:32px; display; flex-direction; gap:0;}
+.section-why p.body-text{color:rgba(255,255,255,0.72); max-width:540px;}
+.feature-list{margin-top:32px; display:flex; flex-direction:column; gap:0;}
 .feature{
-display; gap:18px; padding:20px 0; border-bottom:1px solid var(--line-light);
+  display:flex; gap:18px; padding:20px 0; border-bottom:1px solid var(--line-light);
 }
-.feature{border-bottom;}
+.feature:last-child{border-bottom:none;}
 .feature-icon{
-flex:0 0 44px; width:44px; height:44px; border-radius:12px;
-background(245,166,35,0.12); border:1px solid rgba(245,166,35,0.3);
-display; align-items; justify-content; font-size:19px;
+  flex:0 0 44px; width:44px; height:44px; border-radius:12px;
+  background:rgba(245,166,35,0.12); border:1px solid rgba(245,166,35,0.3);
+  display:flex; align-items:center; justify-content:center; font-size:19px;
 }
 .feature h4{font-size:16.5px; margin-bottom:4px; color:#fff;}
-.feature p{font-size:14px; color(255,255,255,0.62); max-width:460px;}
+.feature p{font-size:14px; color:rgba(255,255,255,0.62); max-width:460px;}
 
 /* ---------- SECTION 05 (contact) ---------- */
-.section-contact{background(--paper); padding:120px 0 60px;}
-.contact-grid{display; grid-template-columns(auto-fit, minmax(250px, 1fr)); gap:28px; margin-top:48px;}
+.section-contact{background:var(--paper); padding:120px 0 60px;}
+.contact-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:28px; margin-top:48px;}
 .contact-card{
-background:#fff; border:1px solid var(--line); border-radius(--radius);
-padding:32px; box-shadow(--shadow);
+  background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+  padding:32px; box-shadow:var(--shadow);
 }
 .contact-card .icon{font-size:26px; margin-bottom:14px;}
 .contact-card h4{font-size:17px; margin-bottom:6px;}
-.contact-card .num{font-family:'JetBrains Mono'; font-size:22px; font-weight:700; color(--night); margin:6px 0;}
-.contact-card .sub{font-size:13px; color(--ink-soft);}
-.contact-card .btn{margin-top:14px; width:100%; justify-content;}
+.contact-card .num{font-family:'JetBrains Mono'; font-size:22px; font-weight:700; color:var(--night); margin:6px 0;}
+.contact-card .sub{font-size:13px; color:var(--ink-soft);}
+.contact-card .btn{margin-top:14px; width:100%; justify-content:center;}
 footer{
-border-top:1px solid var(--line); padding:32px 0; margin-top:80px;
-display; justify-content; align-items; flex-wrap; gap:12px;
+  border-top:1px solid var(--line); padding:32px 0; margin-top:80px;
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
 }
-footer .logo{color(--night);}
-footer .fine{font-size:12.5px; color(--ink-soft);}
+footer .logo{color:var(--night);}
+footer .fine{font-size:12.5px; color:var(--ink-soft);}
 
 /* reveal on scroll */
-.reveal{opacity:0; transform(24px); transition .7s ease, transform .7s ease;}
-.reveal.in{opacity:1; transform(0);}
+.reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+.reveal.in{opacity:1; transform:translateY(0);}
 
 @media (max-width:900px){
-.grid-2, .sim-grid, .why-grid, .contact-grid{grid-template-columns:1fr;}
-.gallery, .testi-grid{grid-template-columns:1fr 1fr;}
-.field-row{grid-template-columns:1fr;}
+  .grid-2, .sim-grid, .why-grid, .contact-grid{grid-template-columns:1fr;}
+  .gallery, .testi-grid{grid-template-columns:1fr 1fr;}
+  .field-row{grid-template-columns:1fr;}
 }
 @media (max-width:600px){
-.wrap{padding:0 20px;}
-.gallery, .testi-grid{grid-template-columns:1fr;}
-.hero-actions{flex-direction; align-items;}
-.sub-head{flex-direction; align-items;}
+  .wrap{padding:0 20px;}
+  .gallery, .testi-grid{grid-template-columns:1fr;}
+  .hero-actions{flex-direction:column; align-items:flex-start;}
+  .sub-head{flex-direction:column; align-items:flex-start;}
+}
+
+/* ---------- CONTRASTE REFORÇADO ----------
+   Mantém a identidade Guapo e garante leitura em qualquer navegador. */
+.section-navy{
+  background:#E9EFE6;
+  color:var(--night);
+}
+.section-navy .eyebrow{color:#146B4A;}
+.section-navy .eyebrow .num{background:var(--sun); color:var(--night);}
+.section-navy h2,
+.section-navy h3,
+.section-navy h4{color:var(--night);}
+.section-navy p.body-text{color:#354957;}
+.sim-card{
+  background:#FFFFFF;
+  border:1px solid rgba(11,30,51,.14);
+  box-shadow:0 18px 45px rgba(11,30,51,.12);
+  color:var(--night);
+}
+.sim-card p{color:#4B5A66 !important;}
+.field label{color:#146B4A;}
+.field input,
+.field select{
+  background:#F7F9F5;
+  color:var(--night);
+  border:1px solid rgba(11,30,51,.22);
+}
+.field input::placeholder{color:#71808A;}
+.field select option{color:var(--night); background:#fff;}
+.sim-result{
+  background:#EAF8F1;
+  border-color:rgba(31,170,109,.45);
+  color:var(--night);
+}
+.sim-result .row{border-bottom-color:rgba(11,30,51,.14);}
+.sim-result .v.green{color:#08794B;}
+.sim-note{color:#4B5A66 !important;}
+.testi-card{
+  background:#FFFFFF;
+  border:1px solid rgba(11,30,51,.14);
+  box-shadow:0 14px 34px rgba(11,30,51,.10);
+}
+.testi-quote,
+.testi-person .name{color:var(--night);}
+.testi-person .loc{color:#52636F;}
+.placeholder-note{color:#52636F;}
+
+.section-why{
+  background:#F4F7F2;
+  color:var(--night);
+}
+.section-why .eyebrow{color:#146B4A;}
+.section-why h2,
+.section-why h4{color:var(--night);}
+.section-why p.body-text{color:#354957;}
+.feature{border-bottom-color:rgba(11,30,51,.14);}
+.feature p{color:#4B5A66;}
+.feature-icon{
+  background:#FFF3D9;
+  border-color:rgba(245,166,35,.55);
+}
+
+@media (max-width:880px){
+  nav{padding:12px 18px; background:rgba(11,30,51,.96);}
+  nav.scrolled{padding:12px 18px;}
+  .logo{font-size:16px;}
+  .nav-cta .btn{padding:10px 14px !important; font-size:12.5px !important;}
+}
+@media (max-width:480px){
+  .hero{min-height:92vh;}
+  .hero-inner{padding-bottom:58px;}
+  .meter{border-radius:18px; align-items:flex-start; flex-direction:column; padding:14px;}
+  .meter-track{width:min(190px, 64vw);}
+  .contact-card{padding:24px;}
 }
 </style>
-
 </head>
 <body>
 
@@ -318,7 +391,6 @@ footer .fine{font-size:12.5px; color(--ink-soft);}
 </nav>
 
 <!-- ============ 01 · HERO ============ -->
-
 <section class="hero" id="inicio">
   <div class="wrap hero-inner">
     <div class="eyebrow hero-tag mono"><span class="num">01</span> ENERGIA SOLAR FOTOVOLTAICA</div>
@@ -339,7 +411,6 @@ footer .fine{font-size:12.5px; color(--ink-soft);}
 </section>
 
 <!-- ============ 02 · POR QUE SOLAR ============ -->
-
 <section class="section-light" id="por-que-solar">
   <div class="wrap">
     <div class="grid-2">
@@ -365,121 +436,118 @@ footer .fine{font-size:12.5px; color(--ink-soft);}
 </section>
 
 <!-- ============ 03 · SIMULE / INSTALAÇÕES / DEPOIMENTOS ============ -->
-
 <section class="section-navy" id="simule">
   <div class="wrap">
     <div class="eyebrow"><span class="num">03</span> Simulação gratuita</div>
     <h2>Simule agora a sua economia</h2>
     <p class="body-text">Informe o consumo e o valor da sua fatura e veja, na hora, quanto você pode economizar com a Guapo Energia. Deixe seus dados que nossa equipe entra em contato para montar uma proposta formal, sem compromisso.</p>
 
-<div class="sim-grid">
-  <div class="sim-card reveal">
-    <div class="field-row">
-      <div class="field">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" placeholder="Seu nome">
+    <div class="sim-grid">
+      <div class="sim-card reveal">
+        <div class="field-row">
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" placeholder="Seu nome">
+          </div>
+          <div class="field">
+            <label for="telefone">Telefone / WhatsApp</label>
+            <input type="tel" id="telefone" placeholder="(00) 00000-0000">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="consumo">Consumo mensal (kWh)</label>
+            <input type="number" id="consumo" placeholder="Ex: 350">
+          </div>
+          <div class="field">
+            <label for="valor">Valor da fatura mensal (R$)</label>
+            <input type="number" id="valor" placeholder="Ex: 1000">
+          </div>
+        </div>
+        <div class="field">
+          <label for="regiao">Sua região</label>
+          <select id="regiao">
+            <option value="sp">São Paulo (SP)</option>
+            <option value="pb">Paraíba (PB)</option>
+            <option value="outra">Outro estado</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="calcular()">Calcular minha economia</button>
+
+        <div class="sim-result" id="resultado">
+          <div class="row"><span>Fatura atual</span><span class="v" id="r-atual">R$ 0,00</span></div>
+          <div class="row"><span>Nova fatura estimada</span><span class="v green" id="r-nova">R$ 0,00</span></div>
+          <div class="row"><span>Economia mensal estimada</span><span class="v green" id="r-mensal">R$ 0,00</span></div>
+          <div class="row"><span>Economia em 12 meses</span><span class="v green" id="r-anual">R$ 0,00</span></div>
+          <button class="btn btn-dark" style="width:100%; justify-content:center; margin-top:16px;" onclick="enviarWhatsapp()">Quero minha proposta no WhatsApp →</button>
+          <p class="sim-note">Estimativa baseada em economia média de 90%. Nossa equipe confirma o valor exato após uma visita técnica ou análise da sua fatura.</p>
+        </div>
       </div>
-      <div class="field">
-        <label for="telefone">Telefone / WhatsApp</label>
-        <input type="tel" id="telefone" placeholder="(00) 00000-0000">
+
+      <div class="reveal" style="display:flex; flex-direction:column; gap:20px; justify-content:center;">
+        <div class="sim-card" style="padding:28px;">
+          <div style="font-size:22px; margin-bottom:10px;">📉 → 📈</div>
+          <h4 style="font-size:17px; margin-bottom:8px;">Como calculamos a sua economia</h4>
+          <p style="font-size:14px; color:rgba(255,255,255,0.68); line-height:1.6;">Usamos o valor atual da sua fatura como base e aplicamos a economia média que sistemas semelhantes ao seu costumam alcançar. Quanto mais preciso for o dado informado, mais próxima da realidade fica a simulação — a proposta formal traz o número exato.</p>
+        </div>
+        <div class="sim-card" style="padding:28px;">
+          <div style="font-size:22px; margin-bottom:10px;">🇧🇷</div>
+          <h4 style="font-size:17px; margin-bottom:8px;">Atendimento em todo o Brasil</h4>
+          <p style="font-size:14px; color:rgba(255,255,255,0.68); line-height:1.6;">Residências, comércios e empresas de qualquer estado podem solicitar uma simulação e receber uma proposta da Guapo Energia.</p>
+        </div>
       </div>
     </div>
-    <div class="field-row">
-      <div class="field">
-        <label for="consumo">Consumo mensal (kWh)</label>
-        <input type="number" id="consumo" placeholder="Ex: 350">
+
+    <!-- Instalações -->
+    <div class="sub-block reveal">
+      <div class="sub-head">
+        <h3>Algumas das nossas instalações</h3>
       </div>
-      <div class="field">
-        <label for="valor">Valor da fatura mensal (R$)</label>
-        <input type="number" id="valor" placeholder="Ex: 1000">
+      <div class="gallery">
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1770567764570-ebe9b5d0c02b?q=80&w=900&auto=format&fit=crop" alt="Instalação residencial com painéis solares no telhado">
+          <div class="gallery-cap">Instalação residencial<span class="tag">Exemplo · sistema 5 kWp</span></div>
+        </div>
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1745187946672-2c1d8cf26a2b?q=80&w=900&auto=format&fit=crop" alt="Painéis solares instalados em telhado">
+          <div class="gallery-cap">Instalação comercial<span class="tag">Exemplo · sistema 12 kWp</span></div>
+        </div>
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1664828113992-8dd7a26275a0?q=80&w=900&auto=format&fit=crop" alt="Detalhe de painel solar fotovoltaico">
+          <div class="gallery-cap">Módulos de alta eficiência<span class="tag">Equipamento Tier 1</span></div>
+        </div>
       </div>
+      <p class="placeholder-note">Fotos ilustrativas. Substitua pelas fotos reais dos seus projetos instalados.</p>
     </div>
-    <div class="field">
-      <label for="regiao">Sua região</label>
-      <select id="regiao">
-        <option value="sp">São Paulo (SP)</option>
-        <option value="pb">Paraíba (PB)</option>
-        <option value="outra">Outro estado</option>
-      </select>
-    </div>
-    <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="calcular()">Calcular minha economia</button>
 
-    <div class="sim-result" id="resultado">
-      <div class="row"><span>Fatura atual</span><span class="v" id="r-atual">R$ 0,00</span></div>
-      <div class="row"><span>Nova fatura estimada</span><span class="v green" id="r-nova">R$ 0,00</span></div>
-      <div class="row"><span>Economia mensal estimada</span><span class="v green" id="r-mensal">R$ 0,00</span></div>
-      <div class="row"><span>Economia em 12 meses</span><span class="v green" id="r-anual">R$ 0,00</span></div>
-      <button class="btn btn-dark" style="width:100%; justify-content:center; margin-top:16px;" onclick="enviarWhatsapp()">Quero minha proposta no WhatsApp →</button>
-      <p class="sim-note">Estimativa baseada em economia média de 90%. Nossa equipe confirma o valor exato após uma visita técnica ou análise da sua fatura.</p>
+    <!-- Depoimentos -->
+    <div class="sub-block reveal">
+      <div class="sub-head">
+        <h3>O que dizem nossos clientes</h3>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Minha fatura caiu muito depois da instalação. O processo foi rápido e a equipe explicou tudo com calma."</p>
+          <div class="testi-person"><div class="avatar">RC</div><div><div class="name">Ricardo C.</div><div class="loc">Cliente residencial</div></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Fizemos a simulação, gostamos da proposta e hoje a energia solar já se paga com a economia mensal."</p>
+          <div class="testi-person"><div class="avatar">MF</div><div><div class="name">Mariana F.</div><div class="loc">Cliente empresarial</div></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Atendimento atencioso do início ao fim. Recomendo para quem quer economizar de verdade."</p>
+          <div class="testi-person"><div class="avatar">JS</div><div><div class="name">João S.</div><div class="loc">Cliente residencial</div></div></div>
+        </div>
+      </div>
+      <p class="placeholder-note">Depoimentos de exemplo. Substitua pelos depoimentos reais dos seus clientes antes de publicar.</p>
     </div>
-  </div>
-
-  <div class="reveal" style="display:flex; flex-direction:column; gap:20px; justify-content:center;">
-    <div class="sim-card" style="padding:28px;">
-      <div style="font-size:22px; margin-bottom:10px;">📉 → 📈</div>
-      <h4 style="font-size:17px; margin-bottom:8px;">Como calculamos a sua economia</h4>
-      <p style="font-size:14px; color:rgba(255,255,255,0.68); line-height:1.6;">Usamos o valor atual da sua fatura como base e aplicamos a economia média que sistemas semelhantes ao seu costumam alcançar. Quanto mais preciso for o dado informado, mais próxima da realidade fica a simulação — a proposta formal traz o número exato.</p>
-    </div>
-    <div class="sim-card" style="padding:28px;">
-      <div style="font-size:22px; margin-bottom:10px;">🇧🇷</div>
-      <h4 style="font-size:17px; margin-bottom:8px;">Atendimento em todo o Brasil</h4>
-      <p style="font-size:14px; color:rgba(255,255,255,0.68); line-height:1.6;">Residências, comércios e empresas de qualquer estado podem solicitar uma simulação e receber uma proposta da Guapo Energia.</p>
-    </div>
-  </div>
-</div>
-
-<!-- Instalações -->
-<div class="sub-block reveal">
-  <div class="sub-head">
-    <h3>Algumas das nossas instalações</h3>
-  </div>
-  <div class="gallery">
-    <div class="gallery-card">
-      <img src="https://images.unsplash.com/photo-1770567764570-ebe9b5d0c02b?q=80&w=900&auto=format&fit=crop" alt="Instalação residencial com painéis solares no telhado">
-      <div class="gallery-cap">Instalação residencial<span class="tag">Exemplo · sistema 5 kWp</span></div>
-    </div>
-    <div class="gallery-card">
-      <img src="https://images.unsplash.com/photo-1745187946672-2c1d8cf26a2b?q=80&w=900&auto=format&fit=crop" alt="Painéis solares instalados em telhado">
-      <div class="gallery-cap">Instalação comercial<span class="tag">Exemplo · sistema 12 kWp</span></div>
-    </div>
-    <div class="gallery-card">
-      <img src="https://images.unsplash.com/photo-1664828113992-8dd7a26275a0?q=80&w=900&auto=format&fit=crop" alt="Detalhe de painel solar fotovoltaico">
-      <div class="gallery-cap">Módulos de alta eficiência<span class="tag">Equipamento Tier 1</span></div>
-    </div>
-  </div>
-  <p class="placeholder-note">Fotos ilustrativas. Substitua pelas fotos reais dos seus projetos instalados.</p>
-</div>
-
-<!-- Depoimentos -->
-<div class="sub-block reveal">
-  <div class="sub-head">
-    <h3>O que dizem nossos clientes</h3>
-  </div>
-  <div class="testi-grid">
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">"Minha fatura caiu muito depois da instalação. O processo foi rápido e a equipe explicou tudo com calma."</p>
-      <div class="testi-person"><div class="avatar">RC</div><div><div class="name">Ricardo C.</div><div class="loc">Cliente residencial</div></div></div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">"Fizemos a simulação, gostamos da proposta e hoje a energia solar já se paga com a economia mensal."</p>
-      <div class="testi-person"><div class="avatar">MF</div><div><div class="name">Mariana F.</div><div class="loc">Cliente empresarial</div></div></div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">"Atendimento atencioso do início ao fim. Recomendo para quem quer economizar de verdade."</p>
-      <div class="testi-person"><div class="avatar">JS</div><div><div class="name">João S.</div><div class="loc">Cliente residencial</div></div></div>
-    </div>
-  </div>
-  <p class="placeholder-note">Depoimentos de exemplo. Substitua pelos depoimentos reais dos seus clientes antes de publicar.</p>
-</div>
-
   </div>
 </section>
 
 <!-- ============ 04 · POR QUE A GUAPO ============ -->
-
 <section class="section-why" id="diferenciais">
   <div class="wrap">
     <div class="why-grid">
@@ -518,7 +586,6 @@ footer .fine{font-size:12.5px; color(--ink-soft);}
 </section>
 
 <!-- ============ 05 · CONTATO ============ -->
-
 <section class="section-contact" id="contato">
   <div class="wrap">
     <div class="eyebrow"><span class="num">05</span> Contato</div>
@@ -655,6 +722,5 @@ function enviarWhatsapp(){
   window.open(`https://wa.me/${numeroEmpresa}?text=${msg}`, '_blank');
 }
 </script>
-
 </body>
 </html>
